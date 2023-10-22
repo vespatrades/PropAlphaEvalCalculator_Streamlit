@@ -42,9 +42,15 @@ def run():
     """)
 
     presets = {
+        # Based on info from
+        # https://support.apextraderfunding.com/hc/en-us/articles/4408610260507-How-Does-The-Trailing-Threshold-Work-Master-Course
         "Custom": {"trailing_dd": 0.0, "account_target": 0.0},
+        "Apex 25k": {"trailing_dd": 1500.0, "account_target": 1500.0},
         "Apex 50k": {"trailing_dd": 2500.0, "account_target": 3000.0},
+        "Apex 75k": {"trailing_dd": 2750.0, "account_target": 4250.0},
+        "Apex 100k": {"trailing_dd": 3000.0, "account_target": 6000.0},
         "Apex 150k": {"trailing_dd": 5000.0, "account_target": 9000.0},
+        "Apex 250k": {"trailing_dd": 6500.0, "account_target": 15000.0},
         "Apex 300k": {"trailing_dd": 7500.0, "account_target": 20000.0}
     }
 
