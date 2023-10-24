@@ -67,7 +67,7 @@ def run():
             value=presets[selected_preset]["account_target"],
             step=100.0
         )
-        stop_width = st.number_input("Enter Stop Size in Currency", value=0.0, step=100.0)
+        stop_width = st.number_input("Enter Stop Size in Currency", value=100.0, step=100.0)
         tp_width = st.number_input("Enter Take Profit Size in Currency", value=0.0, step=100.0)
         win_pct = st.number_input("Enter Estimated Win Percent", value=0.0)
 
