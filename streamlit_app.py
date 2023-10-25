@@ -73,9 +73,20 @@ def run():
 
     compute_button = st.button("Compute Estimated Probability")
 
+    # The following check ensures that the computation only happens when the button is pressed
     if compute_button:
-        result = calculate_probability(trailing_dd, account_target, stop_width, tp_width, win_pct)
-        st.markdown(f"### {result}")
+        # Reserve a spot for our status message
+        status_message = st.empty()
+
+        # Display a message saying the computation is running
+        status_message.text("Computing... Please wait.")
+
+        # We can further check if all input fields are provided, although it's not strictly necessary since there are default values.
+        if all([trailing_dd, account_target, stop_width, tp_width, win_pct]):
+            result = calculate_probability(trailing_dd, account_target, stop_width, tp_width, win_pct)
+            status_message.markdown(f"### {result}")
+        else:
+            st.warning("Please provide all input values before computing.")
 
 
 if __name__ == '__main__':
