@@ -78,11 +78,11 @@ def run():
         # Reserve a spot for our status message
         status_message = st.empty()
 
-        # Display a message saying the computation is running
-        status_message.text("Computing... Please wait.")
-
         # We can further check if all input fields are provided, although it's not strictly necessary since there are default values.
         if all([trailing_dd, account_target, stop_width, tp_width, win_pct]):
+            # Display a message saying the computation is running
+            status_message.text("Computing... Please wait.")
+
             result = calculate_probability(trailing_dd, account_target, stop_width, tp_width, win_pct)
             status_message.markdown(f"### {result}")
         else:
